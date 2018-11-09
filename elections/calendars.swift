@@ -9,8 +9,7 @@
 import Foundation
 import EventKit
 
-
-struct testEvent {
+struct elecEvent {
     var title: String
     var startDate: String
     var endDate: String
@@ -18,8 +17,10 @@ struct testEvent {
     var notes: String
 }
 
-var FirstEvent = testEvent(title: "Registration Day", startDate: "2018-10-31", endDate: "2018-10-31", isAllDay: true, notes: "electionCal")
-var SecondEvent = testEvent(title: "Election Day", startDate: "2018-11-02", endDate: "2018-11-02", isAllDay: true, notes: "electionCal")
-var ThirdEvent = testEvent(title: "Recall Day", startDate: "2018-10-31", endDate: "2018-10-31", isAllDay: true, notes: "electionCal")
+var FirstEvent = elecEvent(title: "Municipal Elections Day", startDate: "2019-11-05", endDate: "2019-11-05", isAllDay: true, notes: "In odd-numbered years, North Carolina has municipal elections, which are a big deal! Your vote has more impact in municipal elections than state or federal because turnout is lower. City and county officials are counting on you! electionCal")
+var SecondEvent = elecEvent(title: "Election Day", startDate: "2018-11-09", endDate: "2018-11-09", isAllDay: true, notes: "This is a cool day. Okay. electionCal")
+var ThirdEvent = elecEvent(title: "Recall Day", startDate: "2018-11-10", endDate: "2018-11-10", isAllDay: true, notes: "electionCal")
 
-var NorthCarolina = [FirstEvent, SecondEvent]
+
+
+var NorthCarolina = [FirstEvent]

@@ -17,23 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-hl-6ey">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="AddElections:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJB-uR-JgM"/>
-                                    <segue destination="8Ri-bZ-0yC" kind="show" id="CeP-oX-D0f"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="vXb-Ir-kwv">
+                                <rect key="frame" x="47" y="174.5" width="320" height="547"/>
+                                <subviews>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="Pick Your State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEg-wR-JnL">
+                                        <rect key="frame" x="32" y="0.0" width="256" height="43"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-Kr-ZVs">
+                                        <rect key="frame" x="0.0" y="172" width="320" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-hl-6ey">
+                                        <rect key="frame" x="49.5" y="517" width="221" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <state key="normal" title="Add Elections and Reminders">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="AddElections:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJB-uR-JgM"/>
+                                            <segue destination="8Ri-bZ-0yC" kind="show" id="CeP-oX-D0f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hAg-hl-6ey" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ao-rf-73i"/>
-                            <constraint firstItem="hAg-hl-6ey" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hhK-nj-Ltt"/>
+                            <constraint firstItem="vXb-Ir-kwv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YqP-d7-NPQ"/>
+                            <constraint firstItem="vXb-Ir-kwv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k2F-3N-kHt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="xvw-Bt-tGs"/>
+                    <connections>
+                        <outlet property="picker" destination="7J1-Kr-ZVs" id="Glr-XI-agY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
