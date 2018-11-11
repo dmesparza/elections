@@ -49,8 +49,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-Ww-is1">
-                                <rect key="frame" x="20" y="141" width="295" height="30"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-Ww-is1">
+                                <rect key="frame" x="20" y="157" width="146" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Congratulations!">
                                         <attributes>
@@ -77,7 +77,7 @@
                             <constraint firstItem="xGD-fH-Lhx" firstAttribute="trailing" secondItem="GOx-ru-YMu" secondAttribute="trailing" constant="154" id="FsK-f5-HMe"/>
                             <constraint firstItem="GOx-ru-YMu" firstAttribute="leading" secondItem="SAj-i6-aB5" secondAttribute="leadingMargin" id="jlJ-Sb-HVf"/>
                             <constraint firstItem="xGD-fH-Lhx" firstAttribute="bottom" secondItem="GOx-ru-YMu" secondAttribute="bottom" constant="494" id="jwP-on-8N0"/>
-                            <constraint firstItem="GOx-ru-YMu" firstAttribute="top" secondItem="0Iw-Ww-is1" secondAttribute="bottom" constant="69" id="t2U-LM-ROf"/>
+                            <constraint firstItem="GOx-ru-YMu" firstAttribute="top" secondItem="0Iw-Ww-is1" secondAttribute="bottom" constant="53" id="t2U-LM-ROf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xGD-fH-Lhx"/>
                     </view>
