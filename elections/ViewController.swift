@@ -9,33 +9,15 @@
 import UIKit
 import EventKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBOutlet weak var picker: UIPickerView!
-    
-    let pickerData = ["Alabama","Florida","Georgia","North Carolina", "South Carolina", "Tennessee",]
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
+class ViewController: UIViewController {
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        picker.delegate = self
-        picker.dataSource = self
     }
-    
-    
+
 
     func createEvents() {
         
@@ -61,7 +43,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     event.isAllDay = electionEvent.isAllDay
                     event.notes = electionEvent.notes
                     event.calendar = store.defaultCalendarForNewEvents
-                    
+                    event.addAlarm(EKAlarm(relativeOffset: -172800))
+                    event.addAlarm(EKAlarm(relativeOffset: -604800))
                     
                     do {
                         try store.save(event, span: .thisEvent)
@@ -90,20 +73,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 // Get the appropriate calendar.
                 let calendar = Calendar.current
-                
-                // Create the start date components
-                var oneDayAgoComponents = DateComponents()
-                oneDayAgoComponents.day = -1
-                var oneDayAgo = calendar.date(byAdding: oneDayAgoComponents, to: Date(), wrappingComponents: false)
-                
+
                 // Create the end date components.
                 var oneYearFromNowComponents = DateComponents()
                 oneYearFromNowComponents.year = 1
-                var oneYearFromNow = calendar.date(byAdding: oneYearFromNowComponents, to: Date(), wrappingComponents: false)
+                let oneYearFromNow = calendar.date(byAdding: oneYearFromNowComponents, to: Date(), wrappingComponents: false)
                 
                 // Create the predicate from the event store's instance method.
                 var predicate: NSPredicate? = nil
-                if let anAgo = oneDayAgo, let aNow = oneYearFromNow {
+                if let aNow = oneYearFromNow {
                     predicate = store.predicateForEvents(withStart: sDate!, end: aNow, calendars: nil)
                 }
                 
@@ -127,7 +105,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-
     
     
     @IBAction func AddElections(_ sender: Any) {
