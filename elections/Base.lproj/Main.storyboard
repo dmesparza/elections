@@ -17,26 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-hl-6ey">
-                                <rect key="frame" x="107" y="738" width="200" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-hl-6ey">
+                                <rect key="frame" x="127" y="738" width="161" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Add Elections and Reminders"/>
+                                <state key="normal" title="Add Events to Calendar"/>
                                 <connections>
                                     <action selector="AddElections:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJB-uR-JgM"/>
                                     <segue destination="8Ri-bZ-0yC" kind="show" id="CeP-oX-D0f"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Election Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-t9-rdQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Election Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIY-t9-rdQ">
                                 <rect key="frame" x="20" y="136" width="248" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="8v4-6C-cAZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This app puts federal elections on your calendar. It also send you reminders to update your voter registration." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTJ-FZ-YoD">
-                                <rect key="frame" x="20" y="389" width="248" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTJ-FZ-YoD">
+                                <rect key="frame" x="20" y="308" width="248" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="VA6-NG-vDT"/>
+                                </constraints>
+                                <string key="text">This app puts election-related events on your calendar. Specifically, one per month on the first day of the month. You can be as involved or non-involved as you like--it's up to you!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,8 +49,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hAg-hl-6ey" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="305" id="FV1-F8-PgK"/>
-                            <constraint firstItem="hAg-hl-6ey" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OC6-Dh-IR6"/>
+                            <constraint firstItem="BIY-t9-rdQ" firstAttribute="leading" secondItem="BTJ-FZ-YoD" secondAttribute="leading" id="9Rq-LC-6jR"/>
+                            <constraint firstItem="BTJ-FZ-YoD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="308" id="M4L-EW-sJ8"/>
+                            <constraint firstItem="BIY-t9-rdQ" firstAttribute="trailing" secondItem="BTJ-FZ-YoD" secondAttribute="trailing" id="PT0-Xx-9LK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hAg-hl-6ey" secondAttribute="bottom" constant="94" id="YDs-DA-3m2"/>
+                            <constraint firstItem="hAg-hl-6ey" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="ZLf-VV-Ub0"/>
+                            <constraint firstItem="BIY-t9-rdQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kW1-aD-lFp"/>
+                            <constraint firstItem="BIY-t9-rdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="oPj-EV-V0d"/>
+                            <constraint firstItem="hAg-hl-6ey" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rWS-ME-NqE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -63,30 +74,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c5-1a-Kar">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3c5-1a-Kar">
                                 <rect key="frame" x="20" y="143" width="241" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2s7-r7-aw1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCx-RD-lIx">
-                                <rect key="frame" x="20" y="527" width="241" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">You'll get a reminder one week ahead of time, and then again three days out. If anything changes, we'll update your calendar automatically.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The next federal elections are now on your calendar." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-Y4-WVK">
-                                <rect key="frame" x="20" y="421" width="241" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You'll get a reminder or two per event, but no more than that. Thank you for taking this first step!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCx-RD-lIx">
+                                <rect key="frame" x="20" y="315" width="241" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="V9a-vh-SuJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3c5-1a-Kar" firstAttribute="top" secondItem="xGD-fH-Lhx" secondAttribute="top" constant="55" id="AL1-iF-tLX"/>
+                            <constraint firstItem="3c5-1a-Kar" firstAttribute="leading" secondItem="QCx-RD-lIx" secondAttribute="leading" id="BzK-EB-qwG"/>
+                            <constraint firstItem="3c5-1a-Kar" firstAttribute="leading" secondItem="SAj-i6-aB5" secondAttribute="leadingMargin" id="IXa-wL-1tj"/>
+                            <constraint firstItem="3c5-1a-Kar" firstAttribute="trailing" secondItem="QCx-RD-lIx" secondAttribute="trailing" id="R9q-NV-EdJ"/>
+                            <constraint firstItem="xGD-fH-Lhx" firstAttribute="bottom" secondItem="QCx-RD-lIx" secondAttribute="bottom" constant="402" id="ylG-tF-JFn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xGD-fH-Lhx"/>
                     </view>
                 </viewController>
